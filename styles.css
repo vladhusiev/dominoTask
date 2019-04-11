@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.btns-group {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.undo, .redo, .new-domino {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #00DCB8;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.undo:active, .redo:active, .new-domino:active {
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+.undo, .redo {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.new-domino {
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    text-transform: uppercase;
+}
+
+.btns-group > div {
+    margin-right: 5px;
+}
+
+.btns-group > div:last-child {
+    margin-right: 0;
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.domino {
+    transition: .3s ease-in-out;
+}
+
+.list {
+    display: flex;
+    position: absolute;
+    right: 20%;
+    top: 37%;
+}
+
+.upper, .lower {
+    width: 70px;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 5px;
+    position: relative;
+}
+
+.inputs {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.input-scale, .input-speed {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-scale input, .input-speed input {
+    display: block;
+    width: 80%;
+}
+
+.one, .two, .three, .four, .five, .six {
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #01DCB9;
+    pointer-events: none;
+}
+
+.one .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.two .dot:first-child {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.two .dot:last-child {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.three .dot:first-child {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.three .dot:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.three .dot:last-child {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.four .dot:first-child {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.four .dot:nth-child(2) {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.four .dot:nth-child(3) {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.four .dot:nth-child(3) {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.four .dot:last-child {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.five .dot:first-child {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.five .dot:nth-child(2) {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.five .dot:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.five .dot:nth-child(4) {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.five .dot:nth-child(5) {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.six .dot:first-child {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.six .dot:nth-child(2) {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.six .dot:nth-child(3) {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+}
+
+.six .dot:nth-child(4) {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.six .dot:nth-child(5) {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.six .dot:nth-child(6) {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
